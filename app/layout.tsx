@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Manrope } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import SmoothScroll from "@/components/SmoothScroll";
 import ScrollProgress from "@/components/ScrollProgress";
@@ -80,6 +81,18 @@ export default function RootLayout({
       <body className="bg-paper font-sans text-ink antialiased">
         <ScrollProgress />
         <SmoothScroll>{children}</SmoothScroll>
+        <Script
+  src="https://www.googletagmanager.com/gtag/js?id=G-7KXZNZBG1X"
+  strategy="afterInteractive"
+/>
+<Script id="google-analytics" strategy="afterInteractive">
+  {`
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-7KXZNZBG1X');
+  `}
+</Script>
         <ScrollToTop />
       </body>
     </html>
