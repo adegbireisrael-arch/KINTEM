@@ -40,10 +40,7 @@ export default function Navbar() {
 
   return (
     <>
-      <motion.header
-        initial={{ y: -40, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+      <header
         className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
           scrolled
             ? "border-b border-stone-200/70 bg-paper/80 backdrop-blur-xl"
@@ -93,7 +90,7 @@ export default function Navbar() {
             </button>
           </div>
         </div>
-      </motion.header>
+      </header>
 
       <MobileMenu open={menuOpen} onClose={() => setMenuOpen(false)} />
     </>
